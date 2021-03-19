@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE>Simple JavaScript Example</TITLE>
+</HEAD>
+<BODY>
+	HTML Text goes here.
+	<SCRIPT>
+                function resetColors()
+                {
+                        self.document.bgColor = "white" 
+                                                // self - a synonym  for the current frame
+var i
+for(i=0; i< frames.length; i++)
+     top.frames[i].document.bgColor="white"
+                       // top refers to the window containing the frame set
+       }
+</SCRIPT>
+	<FORM>
+		<INPUT TYPE=BUTTON VALUE="Change Frame1 to Orange"
+			onclick="parent.frames[0].document.bgColor="orange">
+		<P>
+			<INPUT TYPE=BUTTON VALUE="Change Frame2 to Red"
+				onclick="parent.frames[1].document.bgColor="red">
+		<P>
+			<INPUT TYPE=BUTTON VALUE="Change Frame3 to Green"
+				onclick="parent.frames[2].document.bgColor="green">
+		<P>
+			<INPUT TYPE=BUTTON VALUE="Change Frame4 to Blue"
+				onclick="parent.frames[3].document.bgColor="blue">
+		<P>
+			<INPUT TYPE=BUTTON VALUE="Reset Colors" onclick="resetColors()">
+	</FORM>
+
+</BODY>
+</HTML>
