@@ -17,7 +17,7 @@
 		}
 	</style>
 	<body>
-		<form action="http://localhost:8080/eyshoppingapp/ActionServlet"
+		<form action="</ActionServletURL/>"
 			method="POST">
 			<input type="hidden" name="formname" value="signout" />
 	
@@ -69,21 +69,21 @@
 				}
 			%>
 		</table>
-		<form action="http://localhost:8080/eyshoppingapp/ActionServlet"
+		<form action="</ActionServletURL/>"
 			method="POST">
 			<input type="hidden" name="formname" value="sendSMS" />
 			<button type="submit">SendSMS</button>
 		</form>
 		<br>
 
-		<form action="http://localhost:8080/eyshoppingapp/ActionServlet"
+		<form action="</ActionServletURL/>"
 			method="POST">
 			<input type="hidden" name="formname" value="sendMAIL" />
 			<button type="submit">SendEmail</button>
 		</form>
 		<br>
 
-		<form action="http://localhost:8080/eyshoppingapp/ActionServlet"
+		<form action="</ActionServletURL/>"
 			method="POST">
 			<input type="hidden" name="formname" value="generatePDF" />
 			<button type="submit">GeneratePDF!</button>
