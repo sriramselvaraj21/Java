@@ -14,7 +14,7 @@
 		}
 	</style>
 	<body>
-		<form action="http://localhost:8080/eyshoppingapp/ActionServlet"
+		<form action="</ActionServletURL/>"
 			method="POST">
 			<input type="hidden" name="formname" value="signout" />
 	
@@ -34,7 +34,7 @@
 				}
 			}
 		%>
-		<form action="http://localhost:8080/eyshoppingapp/ActionServlet"
+		<form action="</ActionServletURL/>"
 		method="POST">
 			<input type="hidden" name="formname" value="groceryshop" />
 			<%
