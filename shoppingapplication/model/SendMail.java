@@ -35,9 +35,9 @@ public class SendMail extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("Send EMAIL Action Called");
-		String filePath = "C:\\Users\\AW126XW\\OneDrive - EY\\Desktop\\Invoice.pdf";
-		String to = "18euit504@skcet.ac.in";// from address
-		String from = "18euit504@skcet.ac.in"; // to address
+		String filePath = "<filepath>";
+		String to = "";// from address
+		String from = ""; // to address
 		String host = "smtp.gmail.com";
 
 		Properties properties = System.getProperties();
@@ -49,7 +49,7 @@ public class SendMail extends Action {
 
 		Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("18euit504@skcet.ac.in", "Srii@2124"); // username and password
+				return new PasswordAuthentication("", ""); // username and password
 			}
 		});
 
