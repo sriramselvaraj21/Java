@@ -48,10 +48,11 @@ public class ReadDocument implements Cloneable, Calculator {
 			}
 
 			for (Parcel parcel : parcelList) {
-				double endtime = 0;
-				endtime += Integer.parseInt(parcel.getBreaktime());
-				endtime += Integer.parseInt(parcel.getDistance()) / Integer.parseInt(parcel.getSpeed());
-				System.out.println("your parcel will reach after " + endtime / 24 + "days");
+				
+//				double endtime = 0;
+//				endtime += Integer.parseInt(parcel.getBreaktime());
+//				endtime += Integer.parseInt(parcel.getDistance()) / Integer.parseInt(parcel.getSpeed());
+//				System.out.println("your parcel will reach after " + endtime / 24 + "days");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

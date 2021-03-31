@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>home page</title>
+</head>
+
+
+<style>
+body {
+	text-align: center;
+}
+</style>
+
+
+<body>
+	<form action="http://localhost:8080/eyshoppingapp/ActionServlet"
+		method="POST">
+		<input type="hidden" name="formname" value="signout" />
+
+		<button type="submit">SIGN OUT</button>
+	</form>
+	<br>
+	<br>
+	<br>
+	<br>
+	<form action="http://localhost:8080/eyshoppingapp/ActionServlet"
+		method="POST" >
+		<input type="hidden" name="formname" value="shopnow" />
+		<button type="submit">Start Shopping....</button>
+
+	</form>
+
+</body>
+</html>

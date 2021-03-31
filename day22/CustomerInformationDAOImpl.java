@@ -10,16 +10,18 @@ public class CustomerInformationDAOImpl implements CustomerInformationDAO {
 	@Override
 	public int insertCustomerInfo(CustomerInformationDTO customerInformationDTO) throws Exception {
 		String customerNumber = customerInformationDTO.getCustomerNumber();
+		String customerName = customerInformationDTO.getCustomerName();
 		String customerContact = customerInformationDTO.getCustomerContact();
 		String customerEmail = customerInformationDTO.getCustomerEmail();
-		String customerName = customerInformationDTO.getCustomerAddress();
+		String customerAddress = customerInformationDTO.getCustomerAddress();
 
-		String query = "insert into CustomerInfo_Table values(?,?,?,?)";
+		String query = "insert into CustomerInfo_Table values(?,?,?,?,?)";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
 		stmt.setString(1, customerNumber);
 		stmt.setString(2, customerName);
 		stmt.setString(3, customerEmail);
 		stmt.setString(4, customerContact);
+		stmt.setString(5, customerAddress);
 
 		int count = stmt.executeUpdate();
 		System.out.println(count + "rows inserted");
@@ -27,10 +29,10 @@ public class CustomerInformationDAOImpl implements CustomerInformationDAO {
 	}
 
 	@Override
-	public int deleteCutomerInfo(int customerNumber) throws Exception {
-		String query = "delete from CustomerInfo_Table where cus_Number = ?";
+	public int deleteCutomerInfo(String customerNumber) throws Exception {
+		String query = "delete from CustomerInfo_Table where customer_Number = ?";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
-		stmt.setInt(1, customerNumber);
+		stmt.setString(1, customerNumber);
 		int count = stmt.executeUpdate();
 		System.out.println(count + "rows deleted");
 		return 0;
@@ -39,16 +41,18 @@ public class CustomerInformationDAOImpl implements CustomerInformationDAO {
 	@Override
 	public int updateCutomerInfo(CustomerInformationDTO customerInformationDTO) throws Exception {
 		String customerNumber = customerInformationDTO.getCustomerNumber();
+		String customerName = customerInformationDTO.getCustomerName();
 		String customerContact = customerInformationDTO.getCustomerContact();
 		String customerEmail = customerInformationDTO.getCustomerEmail();
-		String customerName = customerInformationDTO.getCustomerAddress();
+		String customerAddress = customerInformationDTO.getCustomerAddress();
 
-		String query = "update CustomerInfo_Table set (cus_Number = ?,cust_name = ?, cust_email = ?,cust_contact = ?)";
+		String query = "update CustomerInfo_Table set (customer_number = ?,customer_name = ?, customer_email = ?,customer_contact = ?, customer_address = ?)";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
 		stmt.setString(1, customerNumber);
 		stmt.setString(2, customerName);
 		stmt.setString(3, customerEmail);
 		stmt.setString(4, customerContact);
+		stmt.setString(5, customerAddress);
 
 		int count = stmt.executeUpdate();
 		System.out.println(count + "rows updates");
@@ -56,10 +60,10 @@ public class CustomerInformationDAOImpl implements CustomerInformationDAO {
 	}
 
 	@Override
-	public CustomerInformationDTO getCustomerInformation(int customerNumber) throws Exception {
+	public CustomerInformationDTO getCustomerInformation(String customerNumber) throws Exception {
 		String query = "select * from CustomerInfo_Table where cus_Number = ?";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
-		stmt.setInt(1, customerNumber);
+		stmt.setString(1, customerNumber);
 		ResultSet rs = stmt.executeQuery();
 		System.out.println(rs.toString());
 		return null;

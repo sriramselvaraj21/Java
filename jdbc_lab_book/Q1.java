@@ -8,7 +8,7 @@ public class Q1 {
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "<password>");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "root");
 			System.out.println(con);
 			DatabaseMetaData dbmd = con.getMetaData();
 			System.out.println("DatabaseProductName : " + dbmd.getDatabaseProductName());

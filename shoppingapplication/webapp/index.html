@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Select  Language</title>
+	</head>
+	<body>
+		<h1>Select Language..........</h1>
+		
+		<form action="http://localhost:8080/eyshoppingapp/ActionServlet" method="post">
+			<input type="hidden" name="formname" value="selectlanguage"/>
+				<select name="language">
+					<option value="ta">Tamil</option>
+					<option value="te">Telugu</option>
+					<option value="hi">Hindi</option>
+				</select>
+			<input type="submit" value="Select Language">
+		</form>
+	</body>
+</html>

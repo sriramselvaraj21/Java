@@ -8,6 +8,7 @@ public class CustomerInformationDTO implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String customerNumber;
+	private String customerName;
 	private String CustomerAddress;
 	private String CustomerEmail;
 	private String CustomerContact;
@@ -18,6 +19,14 @@ public class CustomerInformationDTO implements Serializable {
 
 	public void setCustomerNumber(String customerNumber) {
 		this.customerNumber = customerNumber;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
 	}
 
 	public String getCustomerAddress() {
@@ -44,10 +53,15 @@ public class CustomerInformationDTO implements Serializable {
 		CustomerContact = customerContact;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
-		return "CustomerInformationDTO [customerNumber=" + customerNumber + ", CustomerAddress=" + CustomerAddress
-				+ ", CustomerEmail=" + CustomerEmail + ", CustomerContact=" + CustomerContact + "]";
+		return "CustomerInformationDTO [customerNumber=" + customerNumber + ", customerName=" + customerName
+				+ ", CustomerAddress=" + CustomerAddress + ", CustomerEmail=" + CustomerEmail + ", CustomerContact="
+				+ CustomerContact + "]";
 	}
 
 }

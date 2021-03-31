@@ -10,15 +10,15 @@ public class InvoiceMasterDTO implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private int invoiceNumber;
+	private String invoiceNumber;
 	private Date invoiceDate;
-	private int customerNumber;
+	private String customerNumber;
 
-	public int getInvoiceNumber() {
+	public String getInvoiceNumber() {
 		return invoiceNumber;
 	}
 
-	public void setInvoiceNumber(int invoiceNumber) {
+	public void setInvoiceNumber(String invoiceNumber) {
 		this.invoiceNumber = invoiceNumber;
 	}
 
@@ -30,11 +30,11 @@ public class InvoiceMasterDTO implements Serializable {
 		this.invoiceDate = invoiceDate;
 	}
 
-	public int getCustomerNumber() {
+	public String getCustomerNumber() {
 		return customerNumber;
 	}
 
-	public void setCustomerNumber(int customerNumber) {
+	public void setCustomerNumber(String customerNumber) {
 		this.customerNumber = customerNumber;
 	}
 

@@ -12,13 +12,13 @@ public class PurchaseInformationDAOImpl implements PurchaseInformationDAO {
 	public int insertPurchaseInfo(PurchaseInformationDTO purchaseInformationDTO) throws SQLException {
 		String invoiceNumber = purchaseInformationDTO.getInvoiceNumber();
 		String itemNumber = purchaseInformationDTO.getItemNumber();
-		int itemUnit = purchaseInformationDTO.getItemUnit();
+		String itemUnit = purchaseInformationDTO.getItemUnit();
 
 		String query = "insert into PurchaseInfo_Table values(?,?,?)";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
 		stmt.setString(1, invoiceNumber);
 		stmt.setString(2, itemNumber);
-		stmt.setInt(3, itemUnit);
+		stmt.setString(3, itemUnit);
 
 		int count = stmt.executeUpdate();
 		System.out.println(count + "rows inserted");
@@ -26,10 +26,10 @@ public class PurchaseInformationDAOImpl implements PurchaseInformationDAO {
 	}
 
 	@Override
-	public int deletePurchaseInfo(int invoiceNumber) throws SQLException {
-		String query = "delete from PurchaseInfo_Table where ItemInfo_Table = ?";
+	public int deletePurchaseInfo(String invoiceNumber) throws SQLException {
+		String query = "delete from PurchaseInfo_Table where invoice_number = ?";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
-		stmt.setInt(1, invoiceNumber);
+		stmt.setString(1, invoiceNumber);
 		int count = stmt.executeUpdate();
 		System.out.println(count + "rows deleted");
 		return 0;
@@ -39,13 +39,13 @@ public class PurchaseInformationDAOImpl implements PurchaseInformationDAO {
 	public int updatePurchaseInfo(PurchaseInformationDTO purchaseInformationDTO) throws SQLException {
 		String invoiceNumber = purchaseInformationDTO.getInvoiceNumber();
 		String itemNumber = purchaseInformationDTO.getItemNumber();
-		int itemUnit = purchaseInformationDTO.getItemUnit();
+		String itemUnit = purchaseInformationDTO.getItemUnit();
 
-		String query = "update PurchaseInfo_Table set(inv_number = ?,item_number = ?,item_unit = ?)";
+		String query = "update PurchaseInfo_Table set(invoice_number = ?,item_number = ?,item_unit = ?)";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
 		stmt.setString(1, invoiceNumber);
 		stmt.setString(2, itemNumber);
-		stmt.setInt(3, itemUnit);
+		stmt.setString(3, itemUnit);
 
 		int count = stmt.executeUpdate();
 		System.out.println(count + "rows inserted");
@@ -53,10 +53,10 @@ public class PurchaseInformationDAOImpl implements PurchaseInformationDAO {
 	}
 
 	@Override
-	public PurchaseInformationDTO getPurchaseInformation(int invoiceNumber) throws SQLException {
-		String query = "select * from PurchaseInfo_Table where item_number = ?";
+	public PurchaseInformationDTO getPurchaseInformation(String invoiceNumber) throws SQLException {
+		String query = "select * from PurchaseInfo_Table where invoice_number = ?";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
-		stmt.setInt(1, invoiceNumber);
+		stmt.setString(1, invoiceNumber);
 		ResultSet rs = stmt.executeQuery();
 		System.out.println(rs.toString());
 		return null;

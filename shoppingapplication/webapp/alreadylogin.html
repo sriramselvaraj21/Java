@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Already Logged in</title>
+	</head>
+	<style>
+		body {text-align: center;}
+	</style>
+	<body>
+		<h1> You are already logged in!! Please Signout and Come again!</h1>
+		 <form action="http://localhost:8080/eyshoppingapp/ActionServlet" method="POST">
+			<input type="hidden" name="formname"   value="signout"/>
+			
+			<button type="submit">SIGN OUT</button>
+		</form>	
+	</body>
+</html>

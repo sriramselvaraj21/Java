@@ -40,7 +40,7 @@ public class ReadXMLUsingDOM implements Convertor, Cloneable {
 			for (Element element : listOfInvoices) {
 				Invoice invoice = new Invoice();
 				invoice.setId(Integer.parseInt((element.getAttributeValue("id"))));
-				invoice.setInvno(element.getAttributeValue("invo"));
+				invoice.setInvno(element.getChildText("invo"));
 				invoice.setInvdate(element.getChildText("invdate"));
 				invoice.setCustomername(element.getChildText("customername"));
 				invoice.setCustomernumber(element.getChildText("customernumber"));

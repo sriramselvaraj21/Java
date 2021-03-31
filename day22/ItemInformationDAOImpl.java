@@ -28,10 +28,10 @@ public class ItemInformationDAOImpl implements ItemInformationDAO {
 	}
 
 	@Override
-	public int deleteItemInfo(int itemNumber) throws SQLException {
-		String query = "delete from ItemInfo_Table where cus_Number = ?";
+	public int deleteItemInfo(String itemNumber) throws SQLException {
+		String query = "delete from ItemInfo_Table where item_number = ?";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
-		stmt.setInt(1, itemNumber);
+		stmt.setString(1, itemNumber);
 		int count = stmt.executeUpdate();
 		System.out.println(count + "rows deleted");
 		return 0;
@@ -57,10 +57,10 @@ public class ItemInformationDAOImpl implements ItemInformationDAO {
 	}
 
 	@Override
-	public ItemInformationDTO getItemInfo(int itemNumber) throws SQLException {
+	public ItemInformationDTO getItemInfo(String itemNumber) throws SQLException {
 		String query = "select * from ItemInfo_Table where item_number = ?";
 		PreparedStatement stmt = DBUtility.getConnection().prepareStatement(query);
-		stmt.setInt(1, itemNumber);
+		stmt.setString(1, itemNumber);
 		ResultSet rs = stmt.executeQuery();
 		System.out.println(rs.toString());
 		return null;

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>SignUP</title>
+	</head>
+	<style>
+		body {text-align: center;}
+	</style>
+	<body>
+		<h1>You are a new user!! Please sign up...</h1>
+		<form action="http://localhost:8080/eyshoppingapp/ActionServlet" method="POST">
+			<input type="hidden" name="formname"   value="signup"/>
+			<label>USERNAME : </label>
+			<input type = "text" placeholder="username" name="username"/>
+			<br><br>
+			<label>PASSWORD : </label>
+			<input type = "text" placeholder="password" name="password"/>
+			<br><br>
+			<button type="submit">SIGN UP</button>
+		</form>	
+	 
+	</body>
+</html>

@@ -3,14 +3,12 @@ package day22;
 import java.io.Serializable;
 
 public class PurchaseInformationDTO implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	private String invoiceNumber;
 	private String itemNumber;
-	private int ItemUnit;
+	private String ItemUnit;
 
 	public String getInvoiceNumber() {
 		return invoiceNumber;
@@ -28,18 +26,22 @@ public class PurchaseInformationDTO implements Serializable {
 		this.itemNumber = itemNumber;
 	}
 
-	public int getItemUnit() {
+	public String getItemUnit() {
 		return ItemUnit;
 	}
 
-	public void setItemunit(int itemUnit) {
+	public void setItemUnit(String itemUnit) {
 		ItemUnit = itemUnit;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
 	public String toString() {
-		return "PurchaseInformationDTO [invoiceNumber=" + invoiceNumber + ", itemNumber=" + itemNumber
-				+ ", ItemQuantity=" + ItemUnit + "]";
+		return "PurchaseInformationDTO [invoiceNumber=" + invoiceNumber + ", itemNumber=" + itemNumber + ", ItemUnit="
+				+ ItemUnit + "]";
 	}
 
 }
