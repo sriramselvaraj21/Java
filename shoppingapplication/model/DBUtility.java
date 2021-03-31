@@ -9,7 +9,7 @@ public class DBUtility {
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/<dbname>", "<username>", "<password>");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

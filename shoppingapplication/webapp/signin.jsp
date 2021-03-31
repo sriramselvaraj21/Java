@@ -12,7 +12,7 @@
 	</style>
 	<body>
 		<h1>Welocome back... Your mobile number is your username..!</h1>
-		<form action="http://localhost:8080/eyshoppingapp/ActionServlet" method="POST">
+		<form action="</ActionServletURL/>" method="POST">
 			<input type="hidden" name="formname"   value="signin"/>
 			<label><mytags:bundle key="username"/></label>
 			<input type = "text" placeholder="username" name="username"/>
