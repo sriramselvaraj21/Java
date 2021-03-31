@@ -18,7 +18,7 @@ public class GeneratePDF extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("Geneate PDF Action Called");
-		String fileName = "C:\\Users\\AW126XW\\OneDrive-EY\\Desktop\\Invoice.pdf";
+		String fileName = "<path>";
 		Document document = new Document();
 		try {
 			HttpSession session = request.getSession();
