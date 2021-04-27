@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+  <tlibversion>1.0</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>Shopping Page tag library</shortname>
+  <tag>
+    <name>getdata</name>
+    <tagclass>com.utils.customtags.LoadData</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>number</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    <tag>
+    <name>lan</name>
+    <tagclass>com.utils.customtags.LanJsp</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>key</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    <tag>
+    <name>gettable</name>
+    <tagclass>com.utils.customtags.LoadTable</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+   
+      <tag>
+    <name>getitemtable</name>
+    <tagclass>com.utils.customtags.LoadItemTable</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+  
+      <tag>
+    <name>getinvoiceresult</name>
+    <tagclass>com.utils.customtags.InvoiceResult</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+    <tag>
+    <name>getinvoicetable</name>
+    <tagclass>com.utils.customtags.LoadInvoiceTable</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+</taglib>
